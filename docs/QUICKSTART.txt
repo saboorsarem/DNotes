@@ -60,5 +60,5 @@ Or just untick "Start DNotes when I sign in" in Settings before quitting.
 
 ---
 
-Design and logo © DANISHYAR. Concept adapted from Hold My Notes (holdmynotes.app)
-by Shobhit — independent Windows reimplementation, not an official port.
+Design and logo © DANISHYAR. Built on the .NET Framework, WinForms and
+System.Drawing, with no third-party runtime dependencies.

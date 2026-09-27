@@ -367,13 +367,10 @@ A log, if you ever need one, is at `%APPDATA%\DNotes\dnotes.log`.
 
 ## Credits
 
-Design and logo by **DANISHYAR**. Concept adapted from
-[Hold My Notes](https://holdmynotes.app/) by Shobhit — archive-instead-of-delete, one plain
-file per note, and the keyboard model are all his. The edge-docked deck was his idea too;
-this build drops it in favour of the single floating button, and the
-[roadmap](#roadmap) tracks bringing it back.
+Design and logo by **DANISHYAR**.
 
-This is an independent Windows reimplementation, not an official port.
+Built on the .NET Framework, WinForms and `System.Drawing` — no third-party runtime
+dependencies, and no code from any other project.
 
 ---
 
