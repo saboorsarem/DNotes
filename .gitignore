@@ -1,0 +1,35 @@
+# ---- build output -----------------------------------------------------------
+bin/
+obj/
+artifacts/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+.idea/
+
+# ---- the compiled app is published as a Release asset, not committed ---------
+# Keeping binaries out of history means the repo stays small and clonable, and
+# every published build is traceable to a tagged commit.
+DNotes.exe
+DNotes.exe.config
+*.zip
+
+# ---- self-test scratch output -----------------------------------------------
+# SELFTEST.txt at the repo root is deliberately NOT ignored: the README links to
+# it as the report for the shipped build. These are the per-run dumps.
+selftest-*.txt
+selftest-*.png
+demo-*.png
+DNotes-selftest-*/
+
+# ---- OS cruft ---------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+$RECYCLE.BIN/

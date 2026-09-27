@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>DNotes</AssemblyName>
+    <RootNamespace>DNotes</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ApplicationIcon>Assets\DNotes.ico</ApplicationIcon>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Product>DNotes</Product>
+    <AssemblyTitle>DNotes</AssemblyTitle>
+    <Company>DANISHYAR</Company>
+    <Description>DNotes - cyberpunk edge-docked sticky notes for Windows</Description>
+    <Version>1.0.0</Version>
+    <NoWarn>CA1416;CS1591</NoWarn>
+    <DebugType>embedded</DebugType>
+    <Optimize>true</Optimize>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\mark.png" LogicalName="DNotes.Assets.mark" />
+    <EmbeddedResource Include="Assets\orb.png" LogicalName="DNotes.Assets.orb" />
+    <EmbeddedResource Include="Assets\mark_bold.png" LogicalName="DNotes.Assets.mark_bold" />
+    <EmbeddedResource Include="Assets\mark_glow.png" LogicalName="DNotes.Assets.mark_glow" />
+    <EmbeddedResource Include="Assets\ring.png" LogicalName="DNotes.Assets.ring" />
+    <EmbeddedResource Include="Assets\emblem.png" LogicalName="DNotes.Assets.emblem" />
+    <EmbeddedResource Include="Assets\wordmark.png" LogicalName="DNotes.Assets.wordmark" />
+    <EmbeddedResource Include="Assets\tray_16.png" LogicalName="DNotes.Assets.tray_16" />
+    <EmbeddedResource Include="Assets\tray_20.png" LogicalName="DNotes.Assets.tray_20" />
+    <EmbeddedResource Include="Assets\tray_24.png" LogicalName="DNotes.Assets.tray_24" />
+    <EmbeddedResource Include="Assets\tray_32.png" LogicalName="DNotes.Assets.tray_32" />
+    <EmbeddedResource Include="Assets\tray_48.png" LogicalName="DNotes.Assets.tray_48" />
+  </ItemGroup>
+</Project>

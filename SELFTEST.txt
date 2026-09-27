@@ -1,0 +1,191 @@
+  [PASS] note window opened
+  [PASS] editor handle created
+  [PASS] editor is enabled
+  [PASS] editor is not read-only
+  [PASS] editor can take focus
+  [PASS] editor is tabbable
+  [PASS] selection stays visible
+  [PASS] typing shortcuts enabled
+  [PASS] every ancestor is enabled
+  [PASS] window is not click-through
+  [PASS] window is not focus-suppressed
+  [PASS] no control overlaps the editor
+  [PASS] a click in the body reaches the editor
+  [PASS] the title is in the note the moment it opens
+  [PASS] the editor holds keyboard focus
+  [PASS] synthetic keystrokes reached the editor
+  [PASS] Enter inserts a line break
+  [PASS] Backspace deletes
+  [PASS] the note can be emptied again
+  [PASS] multi-line entry works
+  [PASS] caret sits at the end after typing
+  [PASS] the note clears again after several lines
+  [PASS] a borderless note can be dragged bigger
+  [PASS] the writing area grew with the note
+  [PASS] a note cannot be dragged past its maximum
+  [PASS] a note cannot be dragged below its minimum
+  [PASS] final text is intact
+  [PASS] Tab indents the note instead of leaving the body
+  [PASS] the title is untouched by typing in the body
+  [PASS] no synthetic keystrokes were dropped
+  [PASS] note was written to its .dnote file
+  [PASS] note reloads from disk with its text
+  [PASS] no part of the window is cropped away
+  [PASS] every footer control sits inside the note
+  [PASS] no two footer controls overlap
+  [PASS] the note's minimum width is wide enough for its own footer
+  [PASS] the footer never covers the writing area
+  [PASS] the note title is showing in its field
+  [PASS] caret is painted and visible on screen
+  [PASS] note screenshot written
+  [PASS] a second note window types independently
+  [PASS] the first note kept its own text
+  [PASS] hovering every control does not throw
+  [PASS] the pointer becomes a hand over controls
+  [PASS] hovering the header buttons does not throw
+  [PASS] the header buttons show a hand cursor
+  [PASS] the pointer goes back to an arrow off a control
+  [PASS] clicking an accent swatch changes the note colour
+  [PASS] the confirm dialog opens and closes
+  [PASS] post-mouse screenshot written
+  [PASS] the floating button exists
+  [PASS] the button is a circle with transparent corners
+  [PASS] the button sits inside the work area
+  [PASS] the button never takes keyboard focus
+  [PASS] the fan opens without stealing focus
+  [PASS] a click opens the shortcut fan
+  [PASS] the fan has six shortcuts
+  [PASS] no two fan shortcuts overlap
+  [PASS] every shortcut is on screen
+  [PASS] fan screenshot written
+  [PASS] clicking a shortcut closes the fan
+  [PASS] the button can be dragged
+  [PASS] it snaps to the edge you drop it near
+  [PASS] the position survives a save and load
+  [PASS] the deck knows to keep clear of the button
+  [PASS] the button can be hidden
+  [PASS] Ctrl+Alt+B brings a hidden button back
+  [PASS] the button can be restored directly
+  [PASS] the tray menu can restore it too
+  [PASS] the floating button is the only thing on the desktop
+  [PASS] button screenshot written
+  [PASS] preview text is always trimmed to the gap it is given
+  [PASS] text that already fits is left alone
+  [PASS] trimmed preview ends in an ellipsis
+  [PASS] all-notes screenshot written
+  [PASS] all-notes lists both notes
+  [PASS] the all-notes footer never collides, at any width
+  [PASS] all-notes draws a hit target for every row
+  [PASS] all-notes has a DELETE button
+  [PASS] clicking a row selects it
+  [PASS] DELETE does nothing when nothing is ticked
+  [PASS] deleting from all-notes removes the row
+  [PASS] the deleted note is gone from disk too
+  [PASS] the list selection is cleared after a delete
+  [PASS] all-notes screenshot written after the delete
+  [PASS] settings screenshot written
+  [PASS] no unhandled exception was swallowed during the run
+== DNOTES SELF-TEST ==========================================
+workspace  C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633
+runtime    4.0.30319.42000  x64
+
+  [PASS] note window opened                             shown
+  [PASS] editor handle created                          IsHandleCreated=True
+  [PASS] editor is enabled                              Enabled=True
+  [PASS] editor is not read-only                        ReadOnly=False
+  [PASS] editor can take focus                          CanFocus=True
+  [PASS] editor is tabbable                             TabStop=True
+  [PASS] selection stays visible                        HideSelection=False
+  [PASS] typing shortcuts enabled                       ShortcutsEnabled=True
+  [PASS] every ancestor is enabled                      clean chain
+  [PASS] window is not click-through                    WS_EX_TRANSPARENT=False
+  [PASS] window is not focus-suppressed                 WS_EX_NOACTIVATE=False
+  [PASS] no control overlaps the editor                 editor is the top-most child
+  [PASS] a click in the body reaches the editor         WindowFromPoint -> editor
+  [PASS] the title is in the note the moment it opens   field="SELF-TEST" model="SELF-TEST"
+  [PASS] the editor holds keyboard focus                GetFocus -> 0x410108 (editor)
+  [PASS] synthetic keystrokes reached the editor        "Hello from DNotes 12345" is in the buffer
+  [PASS] Enter inserts a line break                     length 23 -> 24
+  [PASS] Backspace deletes                              length 24 -> 23
+  [PASS] the note can be emptied again                  length = 0 after 24 backspaces
+  [PASS] multi-line entry works                         lines = 3  [line one
+line two
+line three]
+  [PASS] caret sits at the end after typing             start=28 length=0 textLength=28
+  [PASS] the note clears again after several lines      length = 0 after 30 backspaces
+  [PASS] a borderless note can be dragged bigger        425x475  ->  568x628
+  [PASS] the writing area grew with the note            editor 393x293  ->  536x474
+  [PASS] a note cannot be dragged past its maximum      held at 1125 (ceiling 1125)
+  [PASS] a note cannot be dragged below its minimum     held at 350x238 (floor 350x238)
+  [PASS] final text is intact                           "Cyberpunk notes, typed for real."
+  [PASS] Tab indents the note instead of leaving the body focused=True length 32 -> 36
+  [PASS] the title is untouched by typing in the body   title = "SELF-TEST"
+  [PASS] no synthetic keystrokes were dropped           every event was accepted
+  [PASS] note was written to its .dnote file            bb2a5da07613.dnote, 536 bytes
+  [PASS] note reloads from disk with its text           plain = "   Cyberpunk notes, typed for real."
+  [PASS] no part of the window is cropped away          client 650x587 vs region 650x587 (cropped 0x0)
+  [PASS] every footer control sits inside the note      11 controls
+  [PASS] no two footer controls overlap                 11 controls at scale 1.25
+  [PASS] the note's minimum width is wide enough for its own footer narrowest clean width = 240 logical, widest colliding = none, over 133 widths
+  [PASS] the footer never covers the writing area       editor {X=18,Y=81,Width=618,Height=433}
+  [PASS] the note title is showing in its field         "SELF-TEST"
+  [PASS] caret is painted and visible on screen         21 lit pixels in the caret at {X=444,Y=121,Width=7,Height=24}
+  [PASS] note screenshot written                        C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633\selftest-note.png (23385 bytes)
+  [PASS] a second note window types independently       "second window"
+  [PASS] the first note kept its own text               "   Cyberpunk notes, typed for real."
+== MOUSE INTERACTION =========================================
+  [PASS] hovering every control does not throw          12 hover targets swept
+  [PASS] the pointer becomes a hand over controls       11 of 11 control targets showed a hand cursor
+  [PASS] hovering the header buttons does not throw     pin, shade and close all swept clean
+  [PASS] the header buttons show a hand cursor          3 of 3 header buttons showed a hand cursor
+  [PASS] the pointer goes back to an arrow off a control cursor is arrow
+  [PASS] clicking an accent swatch changes the note colour accent 0 -> 1 (wanted 1)
+  [PASS] the confirm dialog opens and closes            shown = True
+  [PASS] post-mouse screenshot written                  C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633\selftest-mouse.png
+
+== FLOATING BUTTON ===========================================
+  [PASS] the floating button exists                     {X=1760,Y=1040,Width=90,Height=90}, disc 90px
+  [PASS] the button is a circle with transparent corners max corner alpha = 0 (must be 0) and centre = 255
+  [PASS] the button sits inside the work area           face {X=1760,Y=1040,Width=90,Height=90} in {X=0,Y=0,Width=1920,Height=1200}
+  [PASS] the button never takes keyboard focus          6D021C was never foreground across 12 samples while the fan was open
+  [PASS] the fan opens without stealing focus           the foreground was handed straight back
+    (the note held the foreground in 12 of 12 samples)
+  [PASS] a click opens the shortcut fan                 open
+  [PASS] the fan has six shortcuts                      node count = 6
+  [PASS] no two fan shortcuts overlap                   6 nodes
+  [PASS] every shortcut is on screen                    work area 1920x1200
+  [PASS] fan screenshot written                         C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633\selftest-orb-menu.png
+  [PASS] clicking a shortcut closes the fan             fan dismissed
+  [PASS] the button can be dragged                      moved from 1760,1040 to 1830,1070
+  [PASS] it snaps to the edge you drop it near          gap from the right edge = 0px (snap radius 32)
+  [PASS] the position survives a save and load          saved 1830,80 read 1830,80
+  [PASS] the deck knows to keep clear of the button     {X=1830,Y=80,Width=90,Height=90}
+== FINDING THE BUTTON AGAIN ==================================
+  [PASS] the button can be hidden                       hidden as asked, so the way back is now under test
+  [PASS] Ctrl+Alt+B brings a hidden button back         the shortcut revealed it
+  [PASS] the button can be restored directly            restored
+  [PASS] the tray menu can restore it too               the tray row performs the same restore
+  [PASS] the floating button is the only thing on the desktop no other always-on window exists
+  [PASS] button screenshot written                      C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633\selftest-orb.png
+
+  [PASS] preview text is always trimmed to the gap it is given checked both note bodies and narrow-char runs
+  [PASS] text that already fits is left alone           short text unchanged
+  [PASS] trimmed preview ends in an ellipsis            hijddsfljl hijd.
+  [PASS] all-notes screenshot written                   C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633\selftest-allnotes.png
+  [PASS] all-notes lists both notes                     visible = 2
+  [PASS] the all-notes footer never collides, at any width 33 widths from 560 to 1200 logical
+  [PASS] all-notes draws a hit target for every row     2 row rects for 2 notes
+  [PASS] all-notes has a DELETE button                  {X=862,Y=634,Width=105,Height=35}
+  [PASS] clicking a row selects it                      selected = 1
+  [PASS] DELETE does nothing when nothing is ticked     visible = 2 (was 2)
+  [PASS] deleting from all-notes removes the row        visible 2 -> 1
+  [PASS] the deleted note is gone from disk too         1 .dnote files, was 2
+  [PASS] the list selection is cleared after a delete   selected = 0
+  [PASS] all-notes screenshot written after the delete  C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633\selftest-allnotes-deleted.png
+  [PASS] settings screenshot written                    C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633\selftest-settings.png
+
+== RESULT ====================================================
+  [PASS] no unhandled exception was swallowed during the run the process-level guard caught nothing
+  ALL 87 CHECKS PASSED  -  notes are writable.
+
+report: C:\Users\User\AppData\Local\Temp\DNotes-selftest-224633\selftest.txt

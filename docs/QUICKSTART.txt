@@ -1,0 +1,64 @@
+# DNotes 1.0 — Windows release
+
+**Cyberpunk sticky notes docked to the edge of your screen.**
+
+    DNotes.exe            the app (910 KB, single file)
+    DNotes.exe.config     runtime binding (.NET Framework 4.8, already in Windows)
+    README.md             full documentation
+    SELFTEST.txt          output of `DNotes.exe --selftest` on this exact build
+    screenshots/          every window, rendered by the app itself
+
+## Install
+
+Unzip anywhere. Double-click `DNotes.exe`.
+
+No installer, no runtime download, no admin rights. Needs Windows 10 (1903+) or
+Windows 11 — the .NET Framework 4.8 it targets ships with both.
+
+The floating DANISHYAR button appears in the bottom-right of your screen and an
+icon goes to the tray. It also adds itself to your Windows startup so the button is
+there when you log in; turn that off in Settings → General.
+
+## First things to try
+
+1. **Click the floating DANISHYAR button** (bottom-right) for the shortcut fan.
+2. Pick **NOTES**, then double-click **WELCOME TO DNOTES**.
+3. Click inside the text and type.
+4. Press **Ctrl+Alt+N** for a new note. Try **Ctrl+B**, **Ctrl+1** for colour.
+5. **Right-click** the button for a plain list; **drag it** anywhere, and let
+   go near a screen edge and it snaps
+
+## If you want to be sure typing works
+
+    DNotes.exe --selftest
+
+Opens a real note, sends real keystrokes through the Windows input queue, reads the
+editor back, sweeps a mouse across every control, and checks the caret is visible on
+screen. 70 checks, exit code 0 when they all pass. Settings → SELF-CHECK shows the
+same thing live.
+
+## If you hide the floating button
+
+Press **Ctrl+Alt+B** - it brings the button back and opens its menu. Failing that,
+right-click the DNotes icon in the tray; the row will read **SHOW THE BUTTON**.
+
+## Your notes
+
+`%APPDATA%\DNotes\notes\` — one plain `.dnote` JSON file per note. Read them, back
+them up, sync the folder, whatever you like. Deleting keeps a copy in
+`%APPDATA%\DNotes\trash\`. Nothing is sent anywhere; there is no account and no
+server.
+
+## Removing
+
+Quit from the tray icon, then delete this folder.
+To also drop the startup entry:
+
+    reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v DNotes /f
+
+Or just untick "Start DNotes when I sign in" in Settings before quitting.
+
+---
+
+Design and logo © DANISHYAR. Concept adapted from Hold My Notes (holdmynotes.app)
+by Shobhit — independent Windows reimplementation, not an official port.

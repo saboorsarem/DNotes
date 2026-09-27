@@ -1,0 +1,51 @@
+name: build
+
+# DNotes is a .NET Framework 4.8 WinForms app. The SDK builds it, but the output
+# only actually runs on Windows, so the whole build matrix is Windows-only.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and verify (${{ matrix.configuration }})
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Release, Debug]
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('src/DNotes.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Build
+        run: dotnet build src/DNotes.csproj -c ${{ matrix.configuration }} --nologo
+
+      - name: Upload the executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: DNotes-${{ matrix.configuration }}
+          path: src/bin/${{ matrix.configuration }}/net48/DNotes.exe
+          if-no-files-found: error
+
+  # The self-test is deliberately not wired into CI. It opens real windows and
+  # pushes real mouse and keyboard input through the Win32 queue, which needs an
+  # interactive desktop session - a GitHub runner has none, so it would only ever
+  # report a false failure. Run it locally: .\scripts\build.ps1
