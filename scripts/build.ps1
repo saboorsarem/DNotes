@@ -47,7 +47,14 @@ if (-not (Get-Command dotnet -ErrorAction SilentlyContinue)) {
 # The SDK refuses to build a .NET Framework project on a non-Windows host, and
 # this project is WinForms throughout, so failing early with a clear message beats
 # a wall of MSB errors.
-if (-not $IsWindows -and $PSVersionTable.PSVersion.Major -ge 6) {
+#
+# $IsWindows only exists in PowerShell 6+. On Windows PowerShell 5.1 it is an
+# undefined variable, and touching it unguarded throws under Set-StrictMode.
+$onWindows = $true
+if (Get-Variable -Name IsWindows -ErrorAction SilentlyContinue) {
+    $onWindows = [bool](Get-Variable -Name IsWindows -ValueOnly)
+}
+if (-not $onWindows) {
     throw 'DNotes is a Windows WinForms application and can only be built on Windows.'
 }
 
